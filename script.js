@@ -38,10 +38,10 @@ document.addEventListener("DOMContentLoaded", () => {
             div.classList.add("tile");
     
             if (tile === "") {
-                div.classList.add("empty"); // Đảm bảo ô đen luôn giữ màu
+                div.classList.add("empty"); 
             } else {
                 div.textContent = tile;
-                div.classList.add(`tile-${tile}`); // Gán đúng lớp CSS cho từng ô số
+                div.classList.add(`tile-${tile}`); 
             }
     
             gameBoard.appendChild(div);
@@ -49,14 +49,14 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 document.addEventListener("keydown", (event) => {
-    if (!gameStarted) return; // Ngăn chặn di chuyển nếu chưa bấm "Bắt đầu"
+    if (!gameStarted) return; 
 
-    event.preventDefault(); // Ngăn hành động mặc định của phím
+    event.preventDefault(); 
 
     if (["w", "a", "s", "d", "ArrowUp", "ArrowDown", "ArrowLeft", "ArrowRight"].includes(event.key)) {
-        moveTile(event.key); // Di chuyển ô đen trước khi cập nhật số lần nhấn
-        moves++; // Tăng biến `move` sau khi di chuyển thành công
-        stepCountElement.textContent = move; // Hiển thị số lần nhấn trên giao diện
+        moveTile(event.key); 
+        moves++; 
+        stepCountElement.textContent = move; 
     }
 });
 
@@ -67,25 +67,24 @@ function moveTile(direction) {
     switch (direction) {
         case "w":
         case "ArrowUp":
-            if (emptyIndex >= cols) targetIndex = emptyIndex - cols; // Lên
+            if (emptyIndex >= cols) targetIndex = emptyIndex - cols; 
             break;
         case "s":
         case "ArrowDown":
-            if (emptyIndex + cols < tiles.length) targetIndex = emptyIndex + cols; // Xuống
+            if (emptyIndex + cols < tiles.length) targetIndex = emptyIndex + cols; 
             break;
         case "a":
         case "ArrowLeft":
-            if (emptyIndex % cols !== 0) targetIndex = emptyIndex - 1; // Trái
+            if (emptyIndex % cols !== 0) targetIndex = emptyIndex - 1; 
             break;
         case "d":
         case "ArrowRight":
-            if ((emptyIndex + 1) % cols !== 0) targetIndex = emptyIndex + 1; // Phải
-            break;
+            if ((emptyIndex + 1) % cols !== 0) targetIndex = emptyIndex + 1; 
     }
 
     if (targetIndex !== undefined) {
         [tiles[emptyIndex], tiles[targetIndex]] = [tiles[targetIndex], tiles[emptyIndex]];
-        emptyIndex = targetIndex; // Cập nhật vị trí ô trống
+        emptyIndex = targetIndex; 
         renderBoard();
         checkWin();
     }
@@ -94,11 +93,11 @@ function moveTile(direction) {
     
 
 function checkWin() {
-    const isWinning = tiles.slice(0, 11).every((num, index) => num === index + 1); // Kiểm tra thứ tự đúng
+    const isWinning = tiles.slice(0, 11).every((num, index) => num === index + 1); 
 
     if (isWinning) {
-        clearInterval(timerInterval); // Dừng bộ đếm thời gian
-        winMessage.classList.remove("hidden"); // Hiển thị thông báo chiến thắng
+        clearInterval(timerInterval); 
+        winMessage.classList.remove("hidden"); 
 
         gameHistory.push({
             round: gameHistory.length + 1,
@@ -106,9 +105,7 @@ function checkWin() {
             time: time
         });
 
-        updateHistory(); // Cập nhật bảng xếp hạng
-
-        // Đổi nút thành "Bắt đầu" để chơi lại
+        updateHistory(); 
         startBtn.textContent = "Bắt đầu";
         startBtn.classList.remove("end");
         startBtn.classList.add("start");
@@ -149,7 +146,7 @@ function checkWin() {
             shuffleTiles();
             renderBoard();
         } else {
-            gameStarted = false; // Ngăn di chuyển khi kết thúc trò chơi
+            gameStarted = false;
             this.textContent = "Bắt đầu";
             this.classList.remove("end");
             this.classList.add("start");

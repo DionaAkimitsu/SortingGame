@@ -22,7 +22,7 @@ body {
     width: 100%;
     align-items: center;
 }
-/* Nút bắt đầu */
+
 button {
     width: 120px;
     height: 60px;
@@ -56,7 +56,7 @@ button.end {
     display: block;
 }
 
-/* Đồng hồ */
+
 .info .counter {
     display: flex;
     flex-direction: column;
@@ -82,7 +82,7 @@ button.end {
     border-radius: 15px;
 }
 
-/* Bảng trò chơi */
+
 .game-board {
     width: 70%;
     height: 500px;
@@ -117,19 +117,18 @@ button.end {
 .tile-10 { background: #f5f3ff; color: #4c1d95; }
 .tile-11 { background: #fffbeb; color: #a16207; }
 
-/* Ô đen */
+
 .tile.empty {
     background: black !important;
 }
 
-/* Hướng dẫn */
 .instructions {
     margin-top: 15px;
     font-size: 16px;
     font-weight: bold;
 }
 
-/* Lịch sử lượt chơi */
+
 .history {
     margin-top: 20px;
     background: white;
