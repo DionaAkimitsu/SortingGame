@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Xếp Hình</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="main-content">
+    <div class="controls">
+        <button id="startBtn" class="start">Bắt đầu</button>
+        <p id="winMessage" class="hidden">🎉 Bạn đã chiến thắng! 🎉</p>
+    </div>
+    <div class="container">
+        <div class="game-board" id="gameBoard">
+        </div>
+        <div class="info">
+            <div class="counter">
+                <h2>Đồng Hồ</h2>
+                <p id="timer">00:00</p>
+             </div>
+            <div class="instructions">
+                <h2>Hướng Dẫn Di Chuyển</h2>
+                <p>← ↑ → ↓ hoặc W A S D</p>
+            </div>
+        </div>
+        </div>
+        <div class="history">
+            <h2>Lịch Sử Lượt Chơi</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Bước đi</th>
+                        <th>Thời Gian</th>
+                    </tr>
+                </thead>
+                <tbody id="historyList"></tbody>
+            </table>
+    </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

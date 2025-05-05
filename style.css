@@ -1,0 +1,163 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+}
+
+.main-content {
+    max-width: 1920px;
+    margin: auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.container {
+    display: flex;
+}
+
+.container .controls {
+    display: relative;
+    width: 100%;
+    align-items: center;
+}
+/* Nút bắt đầu */
+button {
+    width: 120px;
+    height: 60px;
+    padding: 12px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background: green;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+button.end {
+    background: red;
+}
+
+#winMessage {
+    font-size: 18px;
+    font-weight: bold;
+    color: green;
+    margin-top: 10px;
+    display: none;
+}
+
+#winMessage.hidden {
+    display: none;
+}
+
+#winMessage:not(.hidden) {
+    display: block;
+}
+
+/* Đồng hồ */
+.info .counter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #92ffab;
+    border-radius: 15px;
+}
+
+.info .instructions {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    background-color: #e2e2e2;
+    border-radius: 15px;
+}
+
+/* Bảng trò chơi */
+.game-board {
+    width: 70%;
+    height: 500px;
+    display: grid;
+    grid-template-columns: repeat(4, 150px);
+    grid-template-rows: repeat(3, 150px);
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tile {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.tile-1 { background: #d4edda; color: #155724; }
+.tile-2 { background: #f8d7da; color: #721c24; }
+.tile-3 { background: #d1ecf1; color: #0c5460; }
+.tile-4 { background: #e2e3e5; color: #383d41; }
+.tile-5 { background: #fef2f2; color: #dc2626; }
+.tile-6 { background: #fdf6b2; color: #92400e; }
+.tile-7 { background: #dbeafe; color: #1e3a8a; }
+.tile-8 { background: #ede9fe; color: #6d28d9; }
+.tile-9 { background: #ffe4e6; color: #be185d; }
+.tile-10 { background: #f5f3ff; color: #4c1d95; }
+.tile-11 { background: #fffbeb; color: #a16207; }
+
+/* Ô đen */
+.tile.empty {
+    background: black !important;
+}
+
+/* Hướng dẫn */
+.instructions {
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Lịch sử lượt chơi */
+.history {
+    margin-top: 20px;
+    background: white;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.history h2 {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+th {
+    background-color: #007bff;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
